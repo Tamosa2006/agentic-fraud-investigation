@@ -1,8 +1,7 @@
-@"
 .env
 .venv/
 node_modules/
 .next/
 __pycache__/
 *.pyc
-"@ | Set-Content .gitignoredata/transactions.csv
+data/transactions.csv
