@@ -1,0 +1,141 @@
+{
+  "case_id": "HHG-005",
+  "customer_id": "C02923",
+  "transaction_id": "3523199",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 15,
+  "pattern_count": 3,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 1,
+    "past_cases": 3
+  },
+  "risk": {
+    "initial": 54.0,
+    "graph": 84.0,
+    "final": 84.0
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "Although the customer has a significant history of past confirmed fraud cases on the same card and the flagged transaction has a moderate risk score of 0.54, subsequent transactions appear consistent with normal in-person usage. Given the mixed signals between historical fraud and subsequent legitimate-looking activity, the evidence is insufficient to make a definitive fraud determination.",
+  "agent": {
+    "summary": "Customer C02923 has a history of past confirmed fraud cases involving card C02923-K1 with account takeover patterns. The flagged transaction 3523199 is an online transaction for $100.07 with a moderate risk score of 0.54. Recent transaction history shows multiple normal in-person transactions following the flagged transaction without clear ongoing fraud indicators.",
+    "interpretation": "Although the customer has a significant history of past confirmed fraud cases on the same card and the flagged transaction has a moderate risk score of 0.54, subsequent transactions appear consistent with normal in-person usage. Given the mixed signals between historical fraud and subsequent legitimate-looking activity, the evidence is insufficient to make a definitive fraud determination.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C02923",
+      "relationship": "owns_card",
+      "connected_to": "C02923-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3532043",
+      "evidence": "amount=$117.07, time=2016-12-10 23:28:09, channel=in_person, region=330.0, risk_score=0.14"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3523199",
+      "evidence": "amount=$100.07, time=2016-12-07 21:38:37, channel=online, region=330.0, risk_score=0.54"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3509459",
+      "evidence": "amount=$116.96, time=2016-12-03 11:05:50, channel=in_person, region=330.0, risk_score=0.09"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3509441",
+      "evidence": "amount=$117.07, time=2016-12-03 10:49:59, channel=in_person, region=330.0, risk_score=0.15"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3505582",
+      "evidence": "amount=$117.01, time=2016-12-02 01:44:31, channel=in_person, region=330.0, risk_score=0.15"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3505579",
+      "evidence": "amount=$116.96, time=2016-12-02 01:43:24, channel=in_person, region=330.0, risk_score=0.12"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3493799",
+      "evidence": "amount=$117.09, time=2016-11-28 04:06:43, channel=in_person, region=330.0, risk_score=0.21"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3486581",
+      "evidence": "amount=$141.07, time=2016-11-25 17:19:53, channel=in_person, region=330.0, risk_score=0.02"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3485766",
+      "evidence": "amount=$130.41, time=2016-11-25 09:00:29, channel=in_person, region=330.0, risk_score=0.09"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "made_txn",
+      "connected_to": "3485765",
+      "evidence": "amount=$141.08, time=2016-11-25 08:58:12, channel=in_person, region=330.0, risk_score=0.07"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "device_observed",
+      "connected_to": "iOS 9.3.5 | mobile safari 9.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C02923",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2857",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$539.97"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2717",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$896.08"
+    },
+    {
+      "entity": "C02923",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2400",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$350.99"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 3 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated account_takeover",
+      "description": "TigerGraph returned 3 previous confirmed fraud case(s) with the pattern 'account_takeover'.",
+      "severity": "High"
+    },
+    {
+      "name": "Small-transaction burst",
+      "description": "3 small transaction(s) occurred within the configured 60-minute window.",
+      "severity": "Medium"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-010",
+  "trigger_type": "risk_score",
+  "customer_id": "C10434",
+  "flagged_txn_id": "3506725",
+  "timestamp": "2026-09-23T17:35:57.095464",
+  "verdict": "fraud",
+  "confidence": 0.72,
+  "evidence": [
+    "Model risk score 0.90 for the $1,000.03 online transaction",
+    "Transaction amount far exceeds customer's typical spend (most prior amounts \u2264 $200)",
+    "No recent burst of small transactions indicating testing, but sudden high-value online purchase is atypical"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The flagged transaction has a very high model risk score and is an order of magnitude larger than the customer's normal online purchases, which are generally under $200. No recent activity suggests legitimate high-value spending, and there is no prior cleared fraud case that would explain this deviation, indicating a strong likelihood of fraud."
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-001",
+  "trigger_type": "risk_score",
+  "customer_id": "C12382",
+  "flagged_txn_id": "3514030",
+  "timestamp": "2026-09-23T17:27:37.815020",
+  "verdict": "legit",
+  "confidence": 0.8,
+  "evidence": [
+    "Customer C12382 has multiple prior in\u2011person transactions in billing region 444.0 (e.g., txn 3589921, 3572011) showing established activity there.",
+    "No recent suspicious burst of small transactions detected (velocity_check returned is_suspicious_burst: false).",
+    "Past confirmed fraud cases for this customer involve out\u2011of\u2011region use or new devices, neither of which applies to the current transaction."
+  ],
+  "recommended_action": "no_action",
+  "reasoning": "The transaction amount and region match the cardholder's regular spending pattern, and there is no evidence of a burst of small transactions or new device usage. Past fraud incidents for this customer were tied to out\u2011of\u2011region activity, which is not present here, leading to a high confidence that the transaction is legitimate."
+}

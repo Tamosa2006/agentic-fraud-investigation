@@ -1,0 +1,142 @@
+{
+  "case_id": "HHG-002",
+  "customer_id": "C11891",
+  "transaction_id": "3478782",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 16,
+  "pattern_count": 2,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 4,
+    "past_cases": 1
+  },
+  "risk": {
+    "initial": 79.0,
+    "graph": 86.0,
+    "final": 86.0
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "Although the customer has a history of card-not-present fraud on the same card and the current transaction has an elevated risk score of 0.79, there is insufficient definitive evidence to confirm whether this specific online purchase is fraudulent or legitimate. Transaction velocity is normal and recent behavior includes multiple lower-risk online purchases. Therefore, an uncertain verdict is appropriate due to conflicting indicators.",
+  "agent": {
+    "summary": "Customer C11891 had a confirmed past fraud case (CC-4160) for card-not-present fraud on card C11891-K1 totaling $90.54. The flagged transaction 3478782 is an online transaction for $292.36 with a model risk score of 0.79. Recent transaction velocity checks show no suspicious burst of small transactions within a 60-minute window.",
+    "interpretation": "Although the customer has a history of card-not-present fraud on the same card and the current transaction has an elevated risk score of 0.79, there is insufficient definitive evidence to confirm whether this specific online purchase is fraudulent or legitimate. Transaction velocity is normal and recent behavior includes multiple lower-risk online purchases. Therefore, an uncertain verdict is appropriate due to conflicting indicators.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C11891",
+      "relationship": "owns_card",
+      "connected_to": "C11891-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3545398",
+      "evidence": "amount=$26.22, time=2016-12-15 15:37:17, channel=online, risk_score=0.12"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3545367",
+      "evidence": "amount=$26.27, time=2016-12-15 15:29:45, channel=online, risk_score=0.02"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3545290",
+      "evidence": "amount=$26.21, time=2016-12-15 15:07:23, channel=online, risk_score=0.03"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3545283",
+      "evidence": "amount=$26.26, time=2016-12-15 15:05:06, channel=online, risk_score=0.15"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3545271",
+      "evidence": "amount=$26.21, time=2016-12-15 15:01:07, channel=online, risk_score=0.06"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3544645",
+      "evidence": "amount=$30.22, time=2016-12-15 04:10:51, channel=online, risk_score=0.13"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3540380",
+      "evidence": "amount=$26.21, time=2016-12-13 21:28:35, channel=online, risk_score=0.28"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3537664",
+      "evidence": "amount=$44.96, time=2016-12-12 22:27:29, channel=online, risk_score=0.03"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3478782",
+      "evidence": "amount=$292.36, time=2016-11-22 17:27:07, channel=online, risk_score=0.79"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "made_txn",
+      "connected_to": "3433977",
+      "evidence": "amount=$2.68, time=2016-11-05 23:32:56, channel=online, risk_score=0.07"
+    },
+    {
+      "entity": "C11891",
+      "relationship": "device_observed",
+      "connected_to": "mobile safari generic",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C11891",
+      "relationship": "device_observed",
+      "connected_to": "chrome 55.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C11891",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C11891",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for ios",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C11891",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4160",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$90.54"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 1 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "High-risk recent transaction",
+      "description": "1 recent transaction(s) returned by TigerGraph have a transaction risk score of at least 0.70.",
+      "severity": "Medium"
+    }
+  ]
+}

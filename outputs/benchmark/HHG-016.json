@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-016",
+  "trigger_type": "customer_report",
+  "customer_id": "C09988",
+  "flagged_txn_id": "3534820",
+  "timestamp": "2026-09-23T17:41:26.109218",
+  "verdict": "uncertain",
+  "confidence": 0.6,
+  "evidence": [
+    "Customer C09988 reported the $59.67 transaction (ID 3534820) as unauthorized (customer_report alert).",
+    "Transaction 3534820 has a risk_score of 0.37, higher than most recent transactions for this card (many <0.2).",
+    "No burst of small transactions or velocity anomaly was detected around the time of this purchase.",
+    "Customer has no prior fraud cases in their history."
+  ],
+  "recommended_action": "escalate_to_human",
+  "reasoning": "The customer's claim combined with a moderately elevated risk score raises suspicion, but there is no clear pattern of fraud such as a transaction burst or prior similar incidents. Given the limited evidence, a human review is warranted to confirm whether the transaction is fraudulent."
+}

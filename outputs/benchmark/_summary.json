@@ -1,0 +1,330 @@
+[
+  {
+    "case_id": "HHG-001",
+    "trigger_type": "risk_score",
+    "customer_id": "C12382",
+    "flagged_txn_id": "3514030",
+    "timestamp": "2026-09-23T17:27:37.815020",
+    "verdict": "legit",
+    "confidence": 0.8,
+    "evidence": [
+      "Customer C12382 has multiple prior in\u2011person transactions in billing region 444.0 (e.g., txn 3589921, 3572011) showing established activity there.",
+      "No recent suspicious burst of small transactions detected (velocity_check returned is_suspicious_burst: false).",
+      "Past confirmed fraud cases for this customer involve out\u2011of\u2011region use or new devices, neither of which applies to the current transaction."
+    ],
+    "recommended_action": "no_action",
+    "reasoning": "The transaction amount and region match the cardholder's regular spending pattern, and there is no evidence of a burst of small transactions or new device usage. Past fraud incidents for this customer were tied to out\u2011of\u2011region activity, which is not present here, leading to a high confidence that the transaction is legitimate."
+  },
+  {
+    "case_id": "HHG-002",
+    "trigger_type": "risk_score",
+    "customer_id": "C11891",
+    "flagged_txn_id": "3478782",
+    "timestamp": "2026-09-23T17:27:55.198191",
+    "verdict": "fraud",
+    "confidence": 0.86,
+    "evidence": [
+      "Model risk score 0.79 (high) for the transaction",
+      "Amount $292.36 is far above the customer's typical online amounts (~$26-$52)",
+      "Email domain hotmail.com differs from usual gmail.com or anonymous.com used previously",
+      "Past confirmed fraud case (CC-4160) on same card with card\u2011not\u2011present online pattern",
+      "Transaction is online, matching the fraud pattern of the past case"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The transaction exhibits several red flags: a high model risk score, an amount unusually large for this cardholder, and an atypical email domain. Combined with a prior confirmed card\u2011not\u2011present fraud on the same card, the evidence strongly suggests fraudulent activity, warranting immediate card blocking."
+  },
+  {
+    "case_id": "HHG-003",
+    "trigger_type": "customer_report",
+    "customer_id": "C08623",
+    "flagged_txn_id": "3530164",
+    "timestamp": "2026-09-23T17:28:50.508484",
+    "verdict": "fraud",
+    "confidence": 0.92,
+    "evidence": [
+      "Customer C08623 reported the $49 transaction as unauthorized",
+      "Customer has three prior confirmed fraud cases of out\u2011of\u2011region card use and one account takeover on the same card",
+      "Previous out\u2011of\u2011region fraud cases involved similar transaction amounts (~$48) and resulted in card blocking",
+      "Velocity check shows no burst pattern, indicating this is an isolated suspicious transaction"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The customer's claim of an unrecognized purchase aligns with a history of multiple confirmed out\u2011of\u2011region fraud incidents on the same card, suggesting a repeat pattern. Given the prior outcomes and similar transaction size, the evidence strongly points to fraudulent activity, warranting immediate card blocking."
+  },
+  {
+    "case_id": "HHG-004",
+    "trigger_type": "customer_report",
+    "customer_id": "C08106",
+    "flagged_txn_id": "3583227",
+    "timestamp": "2026-09-23T17:29:45.176457",
+    "verdict": "fraud",
+    "confidence": 0.85,
+    "evidence": [
+      "Customer reported transaction 3583227 as unrecognized.",
+      "Transaction 3583227 has a moderate risk score (0.34) and is online.",
+      "Customer C08106 has three prior confirmed card\u2011not\u2011present fraud cases on the same card (C08106\u2011K1).",
+      "All prior fraud cases involved unrecognized online purchases with similar merchant/email patterns."
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The customer's direct report combined with a history of multiple confirmed card\u2011not\u2011present frauds on the same card strongly indicates this transaction is fraudulent. The moderate risk score and online channel align with the pattern of past fraud, warranting a high confidence block of the card."
+  },
+  {
+    "case_id": "HHG-005",
+    "trigger_type": "risk_score",
+    "customer_id": "C02923",
+    "flagged_txn_id": "3523199",
+    "timestamp": "2026-09-23T17:30:35.352995",
+    "verdict": "fraud",
+    "confidence": 0.78,
+    "evidence": [
+      "Customer C02923 has three confirmed account takeover fraud cases in the past 4 months (patterns: mixed-channel, online & in\u2011person, similar amounts)",
+      "Current transaction (ID 3523199) is online, $100.07, same region (330.0) and same card ID used in prior fraud cases",
+      "Risk model scored the transaction 0.54 (moderate risk) despite no burst of small transactions"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The customer's recent history shows repeated account takeover fraud involving online transactions on the same card and region. The current online purchase matches the amount and pattern of those prior frauds, and the risk score is elevated. Therefore, the transaction is likely fraudulent and the card should be blocked."
+  },
+  {
+    "case_id": "HHG-006",
+    "trigger_type": "customer_report",
+    "customer_id": "C07297",
+    "flagged_txn_id": "3476682",
+    "timestamp": "2026-09-23T17:32:28.299440",
+    "verdict": "uncertain",
+    "confidence": 0.4,
+    "evidence": [
+      "Customer has no prior fraud cases",
+      "No devices associated with the account (cannot verify device used for the flagged transaction)",
+      "Recent transaction history shows many low-value in\u2011person purchases (mostly <$300) with low risk scores",
+      "Flagged transaction amount $482.12 is higher than typical amounts but not unprecedented"
+    ],
+    "recommended_action": "escalate_to_human",
+    "reasoning": "The account shows no prior fraud patterns and lacks device information to confirm the legitimacy of the $482.12 purchase. While the amount is larger than most recent transactions, the customer's denial cannot be verified with available data, so a human review is needed."
+  },
+  {
+    "case_id": "HHG-007",
+    "trigger_type": "risk_score",
+    "customer_id": "C09933",
+    "flagged_txn_id": "3514948",
+    "timestamp": "2026-09-23T17:34:00.664327",
+    "verdict": "fraud",
+    "confidence": 0.85,
+    "evidence": [
+      "Model risk score for transaction 3514948 is 0.87 (high)",
+      "Customer C09933 has three prior confirmed fraud cases on the same card (CC-5521, CC-5092, CC-4787) involving account takeover and out-of-region use",
+      "Past fraud patterns used the same devices (iOS mobile Safari, Android Chrome) that appear in the customer's device list",
+      "Recent transaction history shows mixed online and in\u2011person activity, a hallmark of the earlier account\u2011takeover cases"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The high model risk score combined with a history of repeated account\u2011takeover fraud on the same card and the use of the same device types strongly suggests the current transaction is fraudulent. Blocking the card prevents further loss while the case is reviewed."
+  },
+  {
+    "case_id": "HHG-008",
+    "trigger_type": "customer_report",
+    "customer_id": "C13171",
+    "flagged_txn_id": "3558054",
+    "timestamp": "2026-09-23T17:34:28.213139",
+    "verdict": "fraud",
+    "confidence": 0.85,
+    "evidence": [
+      "Customer C13171 has three prior confirmed fraud cases (CC-5010, CC-4485, CC-4163) all with pattern 'card_not_present_new_device'",
+      "Recent transaction history shows multiple similar $55.xx online purchases with moderate risk scores, indicating a pattern of small card\u2011not\u2011present fraud",
+      "Customer directly reported the $55.68 transaction as unauthorized"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The customer's history of repeated card\u2011not\u2011present fraud using new devices, combined with a similar small online purchase and a direct customer complaint, strongly suggests this transaction is fraudulent. Blocking the card will prevent further loss."
+  },
+  {
+    "case_id": "HHG-009",
+    "trigger_type": "customer_report",
+    "customer_id": "C08299",
+    "flagged_txn_id": "3581141",
+    "timestamp": "2026-09-23T17:35:11.527131",
+    "verdict": "legit",
+    "confidence": 0.75,
+    "evidence": [
+      "No past fraud cases for customer C08299",
+      "Transaction 3581141 is a single $30.02 online purchase with moderate risk score (0.28) and no accompanying burst of small transactions",
+      "Velocity check shows no suspicious burst (max 3 small txns within 60\u202fmin, below threshold of 5)",
+      "Customer's recent activity consists of similar online purchases in nearby regions, indicating normal usage pattern"
+    ],
+    "recommended_action": "no_action",
+    "reasoning": "The flagged purchase fits the customer's typical online buying behavior and does not trigger any velocity or risk alerts. With no prior fraud history and no evidence of a card\u2011testing pattern, the transaction is most likely legitimate."
+  },
+  {
+    "case_id": "HHG-010",
+    "trigger_type": "risk_score",
+    "customer_id": "C10434",
+    "flagged_txn_id": "3506725",
+    "timestamp": "2026-09-23T17:35:57.095464",
+    "verdict": "fraud",
+    "confidence": 0.72,
+    "evidence": [
+      "Model risk score 0.90 for the $1,000.03 online transaction",
+      "Transaction amount far exceeds customer's typical spend (most prior amounts \u2264 $200)",
+      "No recent burst of small transactions indicating testing, but sudden high-value online purchase is atypical"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The flagged transaction has a very high model risk score and is an order of magnitude larger than the customer's normal online purchases, which are generally under $200. No recent activity suggests legitimate high-value spending, and there is no prior cleared fraud case that would explain this deviation, indicating a strong likelihood of fraud."
+  },
+  {
+    "case_id": "HHG-011",
+    "trigger_type": "customer_report",
+    "customer_id": "C11923",
+    "flagged_txn_id": "3583368",
+    "timestamp": "2026-09-23T17:37:01.916541",
+    "verdict": "error",
+    "confidence": 0.0,
+    "evidence": [],
+    "recommended_action": "escalate_to_human",
+    "reasoning": "Agent raised an exception: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kkk0y3bte6abgy10pt0kg9as` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8095, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+  },
+  {
+    "case_id": "HHG-012",
+    "trigger_type": "risk_score",
+    "customer_id": "C05876",
+    "flagged_txn_id": "3553342",
+    "timestamp": "2026-09-23T17:37:42.466861",
+    "verdict": "legit",
+    "confidence": 0.8,
+    "evidence": [
+      "All recent 20 transactions are in-person, no online/device usage",
+      "Velocity check shows no suspicious burst of small transactions",
+      "Past confirmed fraud case involved card-not-present online activity, different pattern"
+    ],
+    "recommended_action": "no_action",
+    "reasoning": "The flagged transaction aligns with the customer's typical in-person purchase behavior and shows no signs of a burst or card-not-present activity that matches the prior fraud case. Given the absence of suspicious patterns, the transaction is likely legitimate."
+  },
+  {
+    "case_id": "HHG-013",
+    "trigger_type": "risk_score",
+    "customer_id": "C07671",
+    "flagged_txn_id": "3526826",
+    "timestamp": "2026-09-23T17:38:32.538892",
+    "verdict": "fraud",
+    "confidence": 0.78,
+    "evidence": [
+      "Current transaction (ID 3526826) is online with high model risk score of 0.76",
+      "Customer's recent transaction history shows only in-person purchases, no recent online activity",
+      "Past confirmed fraud cases for this customer include account takeover and card\u2011not\u2011present online transactions (CC\u20114294, CC\u20113216)"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The flagged online transaction is anomalous compared to the customer's recent in\u2011person pattern and matches prior fraud patterns of account takeover and card\u2011not\u2011present activity. The high risk score further supports suspicion, warranting immediate card blocking."
+  },
+  {
+    "case_id": "HHG-014",
+    "trigger_type": "analyst_request",
+    "customer_id": "C13487",
+    "flagged_txn_id": "3478561",
+    "timestamp": "2026-09-23T17:39:13.414429",
+    "verdict": "legit",
+    "confidence": 0.85,
+    "evidence": [
+      "Transaction 3478561 has a low risk score (0.05) and typical online purchase amount",
+      "Customer's device profile (Android 7.0 | Chrome 62.0) is the only device seen for this customer and not linked to past fraud cases",
+      "Velocity check shows no burst of small transactions (max burst 1, not suspicious)",
+      "Customer has no prior fraud history"
+    ],
+    "recommended_action": "no_action",
+    "reasoning": "The flagged transaction shows a low risk score and normal behavior, the device used is unique to this customer without any prior fraud association, and there is no evidence of rapid small\u2011transaction bursts. With no past fraud patterns matching this case, the activity appears legitimate."
+  },
+  {
+    "case_id": "HHG-015",
+    "trigger_type": "risk_score",
+    "customer_id": "C03042",
+    "flagged_txn_id": "3464869",
+    "timestamp": "2026-09-23T17:40:02.805033",
+    "verdict": "uncertain",
+    "confidence": 0.6,
+    "evidence": [
+      "Current transaction (ID 3464869) is online, $599.94, risk score 0.77 (high)",
+      "Customer C03042 has two prior confirmed fraud cases (CC-3886, CC-0615) with pattern \"card_not_present_new_device\" on the same card",
+      "Device information for the current transaction is not available, so cannot confirm if it matches the new\u2011device pattern seen in past fraud",
+      "Velocity check shows a recent burst of small online transactions, indicating abnormal activity but unrelated to the high\u2011value transaction"
+    ],
+    "recommended_action": "escalate_to_human",
+    "reasoning": "The high model risk score and the customer's history of fraud involving online purchases on new devices raise concern, but without device data for the current transaction we cannot confirm the same fraud pattern. Therefore the case should be escalated for human review."
+  },
+  {
+    "case_id": "HHG-016",
+    "trigger_type": "customer_report",
+    "customer_id": "C09988",
+    "flagged_txn_id": "3534820",
+    "timestamp": "2026-09-23T17:41:26.109218",
+    "verdict": "uncertain",
+    "confidence": 0.6,
+    "evidence": [
+      "Customer C09988 reported the $59.67 transaction (ID 3534820) as unauthorized (customer_report alert).",
+      "Transaction 3534820 has a risk_score of 0.37, higher than most recent transactions for this card (many <0.2).",
+      "No burst of small transactions or velocity anomaly was detected around the time of this purchase.",
+      "Customer has no prior fraud cases in their history."
+    ],
+    "recommended_action": "escalate_to_human",
+    "reasoning": "The customer's claim combined with a moderately elevated risk score raises suspicion, but there is no clear pattern of fraud such as a transaction burst or prior similar incidents. Given the limited evidence, a human review is warranted to confirm whether the transaction is fraudulent."
+  },
+  {
+    "case_id": "HHG-017",
+    "trigger_type": "risk_score",
+    "customer_id": "C04570",
+    "flagged_txn_id": "3450629",
+    "timestamp": "2026-09-23T17:42:09.631438",
+    "verdict": "legit",
+    "confidence": 0.73,
+    "evidence": [
+      "Three $100\u2011range online transactions occurred within ~1 hour on 2016\u201111\u201111 (IDs 3450436, 3450503, 3450629) with consistent region 204.0 and email domain anonymous.com",
+      "Velocity check shows only a 2\u2011transaction burst (threshold 3), so no card\u2011testing pattern detected",
+      "Customer has no prior fraud cases matching this pattern; only past case was cleared and unrelated",
+      "Other recent transactions show typical spending behavior (online and in\u2011person) with low risk scores"
+    ],
+    "recommended_action": "no_action",
+    "reasoning": "The flagged transaction is part of a cluster of similar low\u2011value online purchases from the same region and email domain, and the velocity analysis does not indicate abnormal burst activity. With no matching past fraud pattern, the evidence leans toward legitimate behavior, supporting a no\u2011action decision."
+  },
+  {
+    "case_id": "HHG-018",
+    "trigger_type": "customer_report",
+    "customer_id": "C02354",
+    "flagged_txn_id": "3491361",
+    "timestamp": "2026-09-23T17:43:43.632790",
+    "verdict": "fraud",
+    "confidence": 0.85,
+    "evidence": [
+      "Customer C02354 reported an unrecognized $39.08 purchase (txn 3491361)",
+      "Past confirmed fraud cases for same card (CC-5558, CC-5441, CC-4942, CC-4721) show pattern of unauthorized activity",
+      "Previous card_not_present_fraud involved small online purchase ($8.20) similar in amount to current $39.08"
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The customer explicitly denied making the $39.08 transaction, and the card has a history of confirmed unauthorized activity, including a similar small online fraud. The lack of any legitimate evidence and repeated fraud patterns justify treating this as fraud and blocking the card."
+  },
+  {
+    "case_id": "HHG-019",
+    "trigger_type": "risk_score",
+    "customer_id": "C07987",
+    "flagged_txn_id": "3503878",
+    "timestamp": "2026-09-23T17:44:35.450698",
+    "verdict": "fraud",
+    "confidence": 0.92,
+    "evidence": [
+      "Model risk score for transaction 3503878 is 0.90 (high risk).",
+      "Velocity check shows a suspicious burst of three small online transactions (<$100) within 20 minutes, indicating possible card\u2011testing behavior.",
+      "Customer C07987 has two prior confirmed fraud cases on the same card (CC\u20112860: card\u2011not\u2011present fraud; CC\u20115026: out\u2011of\u2011region use).",
+      "Current transaction is online (card\u2011not\u2011present) and uses a device (Mac OS X 10.11 | Firefox 60.0) not previously seen in legitimate activity."
+    ],
+    "recommended_action": "block_card",
+    "reasoning": "The combination of a high model risk score, recent burst of small online transactions suggestive of testing, and the customer's history of confirmed card\u2011not\u2011present and out\u2011of\u2011region fraud on the same card strongly indicate fraudulent activity. Blocking the card prevents further potential loss."
+  },
+  {
+    "case_id": "HHG-020",
+    "trigger_type": "risk_score",
+    "customer_id": "C12265",
+    "flagged_txn_id": "3509359",
+    "timestamp": "2026-09-23T17:45:20.915569",
+    "verdict": "uncertain",
+    "confidence": 0.6,
+    "evidence": [
+      "Customer C12265 has two prior confirmed account takeover cases on the same card (CC-2447, CC-2277)",
+      "Flagged transaction 3509359 is the first recent online transaction for this card, all recent activity is in\u2011person",
+      "Model risk score is 0.52 (moderate) and no velocity burst of small transactions is detected"
+    ],
+    "recommended_action": "escalate_to_human",
+    "reasoning": "The card has a history of account takeover fraud, and the current transaction is an out\u2011of\u2011pattern online purchase with a moderate risk score. While there is no clear velocity or device anomaly, the change in channel combined with past fraud suggests higher risk, warranting human review."
+  }
+]

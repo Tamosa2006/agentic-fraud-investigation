@@ -1,0 +1,36 @@
+USE GRAPH FraudGraph
+
+CREATE QUERY velocity_check(VERTEX<Customer> cust, INT window_minutes = 120, DOUBLE small_amount = 20.0, INT burst_threshold = 3) FOR GRAPH FraudGraph {
+  TYPEDEF TUPLE<txn_id STRING, ts DATETIME, amount DOUBLE> TxnInfo;
+  ListAccum<TxnInfo> @@allSmall;
+
+  AllTxns = SELECT t
+            FROM Customer:s -(made_txn:e)- Transaction:t
+            WHERE s == cust AND t.amount <= small_amount
+            ORDER BY t.ts ASC
+            LIMIT 300
+            ACCUM @@allSmall += TxnInfo(t.txn_id, t.ts, t.amount);
+
+  # Find the largest cluster: count of small txns within window_minutes of each other
+  SumAccum<INT> @@maxBurstCount;
+  ListAccum<TxnInfo> @@maxBurstTxns;
+
+  FOREACH i IN RANGE[0, @@allSmall.size()-1] DO
+    ListAccum<TxnInfo> @@currentBurst;
+    @@currentBurst += @@allSmall.get(i);
+    FOREACH j IN RANGE[i+1, @@allSmall.size()-1] DO
+      IF datetime_diff(@@allSmall.get(j).ts, @@allSmall.get(i).ts) <= window_minutes * 60 THEN
+        @@currentBurst += @@allSmall.get(j);
+      END;
+    END;
+    IF @@currentBurst.size() > @@maxBurstCount THEN
+      @@maxBurstCount = @@currentBurst.size();
+      @@maxBurstTxns = @@currentBurst;
+    END;
+  END;
+
+  PRINT @@allSmall.size() AS total_small_txns;
+  PRINT @@maxBurstCount AS max_burst_count;
+  PRINT (@@maxBurstCount >= burst_threshold) AS is_suspicious_burst;
+  PRINT @@maxBurstTxns AS burst_transactions;
+}

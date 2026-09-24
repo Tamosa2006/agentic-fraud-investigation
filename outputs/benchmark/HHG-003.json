@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-003",
+  "trigger_type": "customer_report",
+  "customer_id": "C08623",
+  "flagged_txn_id": "3530164",
+  "timestamp": "2026-09-23T17:28:50.508484",
+  "verdict": "fraud",
+  "confidence": 0.92,
+  "evidence": [
+    "Customer C08623 reported the $49 transaction as unauthorized",
+    "Customer has three prior confirmed fraud cases of out\u2011of\u2011region card use and one account takeover on the same card",
+    "Previous out\u2011of\u2011region fraud cases involved similar transaction amounts (~$48) and resulted in card blocking",
+    "Velocity check shows no burst pattern, indicating this is an isolated suspicious transaction"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The customer's claim of an unrecognized purchase aligns with a history of multiple confirmed out\u2011of\u2011region fraud incidents on the same card, suggesting a repeat pattern. Given the prior outcomes and similar transaction size, the evidence strongly points to fraudulent activity, warranting immediate card blocking."
+}

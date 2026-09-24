@@ -1,0 +1,18 @@
+{
+  "case_id": "HHG-002",
+  "trigger_type": "risk_score",
+  "customer_id": "C11891",
+  "flagged_txn_id": "3478782",
+  "timestamp": "2026-09-23T17:27:55.198191",
+  "verdict": "fraud",
+  "confidence": 0.86,
+  "evidence": [
+    "Model risk score 0.79 (high) for the transaction",
+    "Amount $292.36 is far above the customer's typical online amounts (~$26-$52)",
+    "Email domain hotmail.com differs from usual gmail.com or anonymous.com used previously",
+    "Past confirmed fraud case (CC-4160) on same card with card\u2011not\u2011present online pattern",
+    "Transaction is online, matching the fraud pattern of the past case"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The transaction exhibits several red flags: a high model risk score, an amount unusually large for this cardholder, and an atypical email domain. Combined with a prior confirmed card\u2011not\u2011present fraud on the same card, the evidence strongly suggests fraudulent activity, warranting immediate card blocking."
+}

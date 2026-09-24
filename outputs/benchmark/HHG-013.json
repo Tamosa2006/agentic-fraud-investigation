@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-013",
+  "trigger_type": "risk_score",
+  "customer_id": "C07671",
+  "flagged_txn_id": "3526826",
+  "timestamp": "2026-09-23T17:38:32.538892",
+  "verdict": "fraud",
+  "confidence": 0.78,
+  "evidence": [
+    "Current transaction (ID 3526826) is online with high model risk score of 0.76",
+    "Customer's recent transaction history shows only in-person purchases, no recent online activity",
+    "Past confirmed fraud cases for this customer include account takeover and card\u2011not\u2011present online transactions (CC\u20114294, CC\u20113216)"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The flagged online transaction is anomalous compared to the customer's recent in\u2011person pattern and matches prior fraud patterns of account takeover and card\u2011not\u2011present activity. The high risk score further supports suspicion, warranting immediate card blocking."
+}

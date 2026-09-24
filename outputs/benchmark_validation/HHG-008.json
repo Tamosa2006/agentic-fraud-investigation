@@ -1,0 +1,266 @@
+{
+  "case_id": "HHG-008",
+  "customer_id": "C13171",
+  "transaction_id": "3558054",
+  "verdict": "uncertain",
+  "confidence": 0.0,
+  "graph_evidence_count": 35,
+  "pattern_count": 4,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 5,
+    "past_cases": 19
+  },
+  "risk": {
+    "initial": 0,
+    "graph": 33,
+    "final": 33
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Deterministic policy layer result.",
+    "approval_route": "human_analyst",
+    "approval_required": true
+  },
+  "reasoning": "Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.5-flash-lite\\nPlease retry in 9.41270913s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}",
+  "agent": {
+    "summary": "No evidence summary returned by Gemini.",
+    "interpretation": "Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.5-flash-lite\\nPlease retry in 9.41270913s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '9s'}]}}",
+    "decision": "Verdict: uncertain (confidence 0.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C13171",
+      "relationship": "owns_card",
+      "connected_to": "C13171-K2",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3584321",
+      "evidence": "amount=$18.68, time=2016-12-29 17:50:55, channel=online, risk_score=0.05"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3580083",
+      "evidence": "amount=$82.55, time=2016-12-27 21:37:27, channel=online, risk_score=0.23"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3579691",
+      "evidence": "amount=$55.38, time=2016-12-27 19:29:43, channel=online, risk_score=0.25"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3579666",
+      "evidence": "amount=$55.39, time=2016-12-27 19:22:14, channel=online, risk_score=0.19"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3579646",
+      "evidence": "amount=$55.40, time=2016-12-27 19:15:05, channel=online, risk_score=0.37"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3579480",
+      "evidence": "amount=$17.77, time=2016-12-27 18:12:54, channel=online, risk_score=0.08"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3578303",
+      "evidence": "amount=$127.96, time=2016-12-27 02:40:30, channel=online, risk_score=0.17"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3577776",
+      "evidence": "amount=$71.59, time=2016-12-26 22:49:06, channel=online, risk_score=0.13"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3577591",
+      "evidence": "amount=$52.18, time=2016-12-26 21:49:18, channel=online, risk_score=0.1"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "made_txn",
+      "connected_to": "3576194",
+      "evidence": "amount=$81.03, time=2016-12-26 13:25:30, channel=online, risk_score=0.21"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "device_observed",
+      "connected_to": "mobile safari 11.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "device_observed",
+      "connected_to": "firefox 60.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for ios",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-5010",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$629.26"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4819",
+      "evidence": "outcome=cleared, pattern=none, exposure=$0.00"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4485",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$105.12"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4163",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$582.46"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3928",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$165.82"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3728",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$113.95"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3566",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$88.07"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3422",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$124.24"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3079",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$847.02"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2716",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$253.69"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2454",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$86.69"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2244",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$110.46"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2059",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$116.95"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1925",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$120.30"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1715",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$553.72"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1293",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$419.34"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0772",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$183.27"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0467",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$649.77"
+    },
+    {
+      "entity": "C13171",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0056",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$40.21"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 18 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated card_not_present_new_device",
+      "description": "TigerGraph returned 12 previous confirmed fraud case(s) with the pattern 'card_not_present_new_device'.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated card_not_present_fraud",
+      "description": "TigerGraph returned 6 previous confirmed fraud case(s) with the pattern 'card_not_present_fraud'.",
+      "severity": "High"
+    },
+    {
+      "name": "Small-transaction burst",
+      "description": "3 small transaction(s) occurred within the configured 60-minute window.",
+      "severity": "Medium"
+    }
+  ]
+}

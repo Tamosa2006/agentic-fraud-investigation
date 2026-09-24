@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-015",
+  "trigger_type": "risk_score",
+  "customer_id": "C03042",
+  "flagged_txn_id": "3464869",
+  "timestamp": "2026-09-23T17:40:02.805033",
+  "verdict": "uncertain",
+  "confidence": 0.6,
+  "evidence": [
+    "Current transaction (ID 3464869) is online, $599.94, risk score 0.77 (high)",
+    "Customer C03042 has two prior confirmed fraud cases (CC-3886, CC-0615) with pattern \"card_not_present_new_device\" on the same card",
+    "Device information for the current transaction is not available, so cannot confirm if it matches the new\u2011device pattern seen in past fraud",
+    "Velocity check shows a recent burst of small online transactions, indicating abnormal activity but unrelated to the high\u2011value transaction"
+  ],
+  "recommended_action": "escalate_to_human",
+  "reasoning": "The high model risk score and the customer's history of fraud involving online purchases on new devices raise concern, but without device data for the current transaction we cannot confirm the same fraud pattern. Therefore the case should be escalated for human review."
+}

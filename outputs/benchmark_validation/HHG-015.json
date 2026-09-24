@@ -1,0 +1,159 @@
+{
+  "case_id": "HHG-015",
+  "customer_id": "C03042",
+  "transaction_id": "3464869",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 18,
+  "pattern_count": 3,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 4,
+    "past_cases": 3
+  },
+  "risk": {
+    "initial": 77.0,
+    "graph": 96.0,
+    "final": 96.0
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "Although the flagged online transaction has a relatively high risk score of 0.77 and the customer has a history of confirmed fraud on the same card, there is insufficient specific evidence regarding the device or region of the current transaction to definitively label it as fraud. Therefore, the verdict remains uncertain pending further contextual evidence.",
+  "agent": {
+    "summary": "Real-time model scored transaction 3464869 at 0.77 Customer C03042 has past confirmed fraud cases involving online purchases on card C03042-K1 Velocity check shows no suspicious burst of small transactions",
+    "interpretation": "Although the flagged online transaction has a relatively high risk score of 0.77 and the customer has a history of confirmed fraud on the same card, there is insufficient specific evidence regarding the device or region of the current transaction to definitively label it as fraud. Therefore, the verdict remains uncertain pending further contextual evidence.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C03042",
+      "relationship": "owns_card",
+      "connected_to": "C03042-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3579649",
+      "evidence": "amount=$214.03, time=2016-12-27 19:16:03, channel=in_person, region=299.0, risk_score=0.22"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3579474",
+      "evidence": "amount=$50.09, time=2016-12-27 18:10:11, channel=online, region=325.0, risk_score=0.09"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3563095",
+      "evidence": "amount=$108.51, time=2016-12-21 18:03:25, channel=in_person, region=472.0, risk_score=0.2"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3563052",
+      "evidence": "amount=$225.91, time=2016-12-21 17:50:10, channel=in_person, region=299.0, risk_score=0.13"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3537082",
+      "evidence": "amount=$199.96, time=2016-12-12 19:42:33, channel=online, region=264.0, risk_score=0.36"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3487482",
+      "evidence": "amount=$150.06, time=2016-11-25 22:07:57, channel=online, region=327.0, risk_score=0.71"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3476179",
+      "evidence": "amount=$226.07, time=2016-11-21 17:27:40, channel=in_person, region=337.0, risk_score=0.16"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3476174",
+      "evidence": "amount=$116.92, time=2016-11-21 17:26:45, channel=in_person, region=337.0, risk_score=0.2"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3474270",
+      "evidence": "amount=$200.09, time=2016-11-20 21:30:30, channel=online, region=337.0, risk_score=0.66"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "made_txn",
+      "connected_to": "3468946",
+      "evidence": "amount=$312.04, time=2016-11-18 22:10:43, channel=in_person, region=337.0, risk_score=0.11"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "device_observed",
+      "connected_to": "Windows 10 | chrome 66.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C03042",
+      "relationship": "device_observed",
+      "connected_to": "iOS 11.3.0 | mobile safari generic",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C03042",
+      "relationship": "device_observed",
+      "connected_to": "Mac OS X 10_10_5 | chrome 65.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C03042",
+      "relationship": "device_observed",
+      "connected_to": "iOS 11.0.3 | mobile safari generic",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C03042",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3886",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$175.05"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1313",
+      "evidence": "outcome=cleared, pattern=none, exposure=$0.00"
+    },
+    {
+      "entity": "C03042",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0615",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$174.99"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 2 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated card_not_present_new_device",
+      "description": "TigerGraph returned 2 previous confirmed fraud case(s) with the pattern 'card_not_present_new_device'.",
+      "severity": "High"
+    },
+    {
+      "name": "High-risk recent transaction",
+      "description": "1 recent transaction(s) returned by TigerGraph have a transaction risk score of at least 0.70.",
+      "severity": "Medium"
+    }
+  ]
+}

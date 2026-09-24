@@ -1,0 +1,101 @@
+{
+  "case_id": "HHG-014",
+  "customer_id": "C13487",
+  "transaction_id": "3478561",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 11,
+  "pattern_count": 0,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 0,
+    "past_cases": 0
+  },
+  "risk": {
+    "initial": 0,
+    "graph": 0,
+    "final": 0
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "While the analyst alert mentions purchases from an unusual device profile across several cards, the tool results for customer C13487 show no recorded devices, no past fraud history, and normal in-person transaction patterns. Therefore, the available evidence is insufficient to confirm whether transaction 3478561 is fraudulent.",
+  "agent": {
+    "summary": "Customer profile shows no past fraud cases and no associated devices Recent transactions consist of routine in-person purchases with low risk scores",
+    "interpretation": "While the analyst alert mentions purchases from an unusual device profile across several cards, the tool results for customer C13487 show no recorded devices, no past fraud history, and normal in-person transaction patterns. Therefore, the available evidence is insufficient to confirm whether transaction 3478561 is fraudulent.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C13487",
+      "relationship": "owns_card",
+      "connected_to": "C13487-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3578937",
+      "evidence": "amount=$57.89, time=2016-12-27 14:43:09, channel=in_person, region=191.0, risk_score=0.2"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3558767",
+      "evidence": "amount=$48.03, time=2016-12-20 02:16:19, channel=in_person, region=191.0, risk_score=0.1"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3551004",
+      "evidence": "amount=$20.98, time=2016-12-17 14:56:55, channel=in_person, region=272.0, risk_score=0.11"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3537024",
+      "evidence": "amount=$35.91, time=2016-12-12 19:23:27, channel=in_person, region=191.0, risk_score=0.22"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3536091",
+      "evidence": "amount=$31.02, time=2016-12-12 14:05:58, channel=in_person, region=272.0, risk_score=0.01"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3524718",
+      "evidence": "amount=$25.95, time=2016-12-08 14:32:48, channel=in_person, region=272.0, risk_score=0.28"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3517247",
+      "evidence": "amount=$35.96, time=2016-12-05 21:33:21, channel=in_person, region=191.0, risk_score=0.12"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3510711",
+      "evidence": "amount=$42.95, time=2016-12-03 18:53:03, channel=in_person, region=191.0, risk_score=0.15"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3506459",
+      "evidence": "amount=$30.87, time=2016-12-02 13:49:41, channel=in_person, region=272.0, risk_score=0.2"
+    },
+    {
+      "entity": "C13487",
+      "relationship": "made_txn",
+      "connected_to": "3497594",
+      "evidence": "amount=$30.96, time=2016-11-29 16:55:33, channel=in_person, region=272.0, risk_score=0.11"
+    }
+  ],
+  "patterns": []
+}

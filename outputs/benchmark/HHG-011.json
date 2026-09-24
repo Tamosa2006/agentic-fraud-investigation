@@ -1,0 +1,12 @@
+{
+  "case_id": "HHG-011",
+  "trigger_type": "customer_report",
+  "customer_id": "C11923",
+  "flagged_txn_id": "3583368",
+  "timestamp": "2026-09-23T17:37:01.916541",
+  "verdict": "error",
+  "confidence": 0.0,
+  "evidence": [],
+  "recommended_action": "escalate_to_human",
+  "reasoning": "Agent raised an exception: Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `org_01kkk0y3bte6abgy10pt0kg9as` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8095, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+}

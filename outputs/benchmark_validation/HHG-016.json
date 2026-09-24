@@ -1,0 +1,143 @@
+{
+  "case_id": "HHG-016",
+  "customer_id": "C09988",
+  "transaction_id": "3534820",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "graph_evidence_count": 17,
+  "pattern_count": 1,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 6,
+    "past_cases": 0
+  },
+  "risk": {
+    "initial": 0,
+    "graph": 10,
+    "final": 18.5
+  },
+  "next_best_action": {
+    "action": "block_card",
+    "reason": "Human approval required.",
+    "approval_route": "human_analyst",
+    "approval_required": true
+  },
+  "reasoning": "The customer explicitly disputed the $59.67 transaction. Furthermore, velocity checks on customer C09988 reveal historical card-testing behavior with numerous small transactions occurring in rapid succession. Given the direct customer report and the established pattern of unauthorized activity, the transaction is classified as fraudulent.",
+  "agent": {
+    "summary": "Customer C09988 reported not making the $59.67 purchase (Transaction 3534820) Customer profile shows past history of suspicious card-testing bursts involving multiple small transactions under $60 within short time windows No past fraud cases recorded, but velocity check confirms previous card-testing behavior on the account",
+    "interpretation": "The customer explicitly disputed the $59.67 transaction. Furthermore, velocity checks on customer C09988 reveal historical card-testing behavior with numerous small transactions occurring in rapid succession. Given the direct customer report and the established pattern of unauthorized activity, the transaction is classified as fraudulent.",
+    "decision": "Verdict: fraud (confidence 85.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C09988",
+      "relationship": "owns_card",
+      "connected_to": "C09988-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3571970",
+      "evidence": "amount=$51.65, time=2016-12-24 19:28:38, channel=online, risk_score=0.03"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3571514",
+      "evidence": "amount=$134.97, time=2016-12-24 17:01:59, channel=online, risk_score=0.02"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3570589",
+      "evidence": "amount=$29.58, time=2016-12-24 03:25:48, channel=online, risk_score=0.28"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3569366",
+      "evidence": "amount=$19.95, time=2016-12-23 19:54:27, channel=online, risk_score=0.13"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3568791",
+      "evidence": "amount=$24.54, time=2016-12-23 16:36:28, channel=online, risk_score=0.27"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3565172",
+      "evidence": "amount=$88.04, time=2016-12-22 04:59:23, channel=online, risk_score=0.14"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3558449",
+      "evidence": "amount=$17.13, time=2016-12-20 00:12:56, channel=online, risk_score=0.17"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3557399",
+      "evidence": "amount=$17.16, time=2016-12-19 18:27:54, channel=online, risk_score=0.06"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3556269",
+      "evidence": "amount=$79.89, time=2016-12-19 04:54:03, channel=online, risk_score=0.01"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "made_txn",
+      "connected_to": "3554344",
+      "evidence": "amount=$52.36, time=2016-12-18 17:07:11, channel=online, risk_score=0.05"
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "mobile safari 11.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "mobile",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "chrome 61.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09988",
+      "relationship": "device_observed",
+      "connected_to": "safari 10.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Small-transaction burst",
+      "description": "5 small transaction(s) occurred within the configured 60-minute window.",
+      "severity": "Medium"
+    }
+  ]
+}

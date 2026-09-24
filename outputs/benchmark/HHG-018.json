@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-018",
+  "trigger_type": "customer_report",
+  "customer_id": "C02354",
+  "flagged_txn_id": "3491361",
+  "timestamp": "2026-09-23T17:43:43.632790",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "evidence": [
+    "Customer C02354 reported an unrecognized $39.08 purchase (txn 3491361)",
+    "Past confirmed fraud cases for same card (CC-5558, CC-5441, CC-4942, CC-4721) show pattern of unauthorized activity",
+    "Previous card_not_present_fraud involved small online purchase ($8.20) similar in amount to current $39.08"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The customer explicitly denied making the $39.08 transaction, and the card has a history of confirmed unauthorized activity, including a similar small online fraud. The lack of any legitimate evidence and repeated fraud patterns justify treating this as fraud and blocking the card."
+}

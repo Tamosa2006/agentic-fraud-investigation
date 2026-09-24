@@ -1,0 +1,207 @@
+{
+  "total": 20,
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "case_id": "HHG-001",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 15,
+      "patterns": 3,
+      "final_risk": 87.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-002",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 16,
+      "patterns": 2,
+      "final_risk": 86.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-003",
+      "status": "PASS",
+      "verdict": "fraud",
+      "confidence": 0.95,
+      "graph_evidence": 17,
+      "patterns": 2,
+      "final_risk": 32.5,
+      "action": "block_card"
+    },
+    {
+      "case_id": "HHG-004",
+      "status": "PASS",
+      "verdict": "fraud",
+      "confidence": 0.85,
+      "graph_evidence": 20,
+      "patterns": 2,
+      "final_risk": 28.5,
+      "action": "block_card"
+    },
+    {
+      "case_id": "HHG-005",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 15,
+      "patterns": 3,
+      "final_risk": 84.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-006",
+      "status": "PASS",
+      "verdict": "fraud",
+      "confidence": 0.85,
+      "graph_evidence": 11,
+      "patterns": 1,
+      "final_risk": 18.5,
+      "action": "block_card"
+    },
+    {
+      "case_id": "HHG-007",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 32,
+      "patterns": 3,
+      "final_risk": 100,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-008",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 35,
+      "patterns": 4,
+      "final_risk": 33,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-009",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 0,
+      "patterns": 0,
+      "final_risk": 0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-010",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 0,
+      "patterns": 0,
+      "final_risk": 90.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-011",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 0,
+      "patterns": 0,
+      "final_risk": 0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-012",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 0,
+      "patterns": 0,
+      "final_risk": 55.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-013",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 0,
+      "patterns": 0,
+      "final_risk": 76.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-014",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 11,
+      "patterns": 0,
+      "final_risk": 0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-015",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 18,
+      "patterns": 3,
+      "final_risk": 96.0,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-016",
+      "status": "PASS",
+      "verdict": "fraud",
+      "confidence": 0.85,
+      "graph_evidence": 17,
+      "patterns": 1,
+      "final_risk": 18.5,
+      "action": "block_card"
+    },
+    {
+      "case_id": "HHG-017",
+      "status": "PASS",
+      "verdict": "legit",
+      "confidence": 0.8,
+      "graph_evidence": 15,
+      "patterns": 1,
+      "final_risk": 52.0,
+      "action": "no_action"
+    },
+    {
+      "case_id": "HHG-018",
+      "status": "PASS",
+      "verdict": "fraud",
+      "confidence": 0.9,
+      "graph_evidence": 31,
+      "patterns": 3,
+      "final_risk": 32.0,
+      "action": "block_card"
+    },
+    {
+      "case_id": "HHG-019",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.5,
+      "graph_evidence": 16,
+      "patterns": 2,
+      "final_risk": 100,
+      "action": "escalate_to_human"
+    },
+    {
+      "case_id": "HHG-020",
+      "status": "PASS",
+      "verdict": "uncertain",
+      "confidence": 0.0,
+      "graph_evidence": 13,
+      "patterns": 2,
+      "final_risk": 68.0,
+      "action": "escalate_to_human"
+    }
+  ]
+}

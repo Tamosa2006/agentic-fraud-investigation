@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-020",
+  "trigger_type": "risk_score",
+  "customer_id": "C12265",
+  "flagged_txn_id": "3509359",
+  "timestamp": "2026-09-23T17:45:20.915569",
+  "verdict": "uncertain",
+  "confidence": 0.6,
+  "evidence": [
+    "Customer C12265 has two prior confirmed account takeover cases on the same card (CC-2447, CC-2277)",
+    "Flagged transaction 3509359 is the first recent online transaction for this card, all recent activity is in\u2011person",
+    "Model risk score is 0.52 (moderate) and no velocity burst of small transactions is detected"
+  ],
+  "recommended_action": "escalate_to_human",
+  "reasoning": "The card has a history of account takeover fraud, and the current transaction is an out\u2011of\u2011pattern online purchase with a moderate risk score. While there is no clear velocity or device anomaly, the change in channel combined with past fraud suggests higher risk, warranting human review."
+}

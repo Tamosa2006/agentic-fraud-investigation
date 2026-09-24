@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-012",
+  "trigger_type": "risk_score",
+  "customer_id": "C05876",
+  "flagged_txn_id": "3553342",
+  "timestamp": "2026-09-23T17:37:42.466861",
+  "verdict": "legit",
+  "confidence": 0.8,
+  "evidence": [
+    "All recent 20 transactions are in-person, no online/device usage",
+    "Velocity check shows no suspicious burst of small transactions",
+    "Past confirmed fraud case involved card-not-present online activity, different pattern"
+  ],
+  "recommended_action": "no_action",
+  "reasoning": "The flagged transaction aligns with the customer's typical in-person purchase behavior and shows no signs of a burst or card-not-present activity that matches the prior fraud case. Given the absence of suspicious patterns, the transaction is likely legitimate."
+}

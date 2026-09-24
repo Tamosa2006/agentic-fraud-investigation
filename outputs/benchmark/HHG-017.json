@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-017",
+  "trigger_type": "risk_score",
+  "customer_id": "C04570",
+  "flagged_txn_id": "3450629",
+  "timestamp": "2026-09-23T17:42:09.631438",
+  "verdict": "legit",
+  "confidence": 0.73,
+  "evidence": [
+    "Three $100\u2011range online transactions occurred within ~1 hour on 2016\u201111\u201111 (IDs 3450436, 3450503, 3450629) with consistent region 204.0 and email domain anonymous.com",
+    "Velocity check shows only a 2\u2011transaction burst (threshold 3), so no card\u2011testing pattern detected",
+    "Customer has no prior fraud cases matching this pattern; only past case was cleared and unrelated",
+    "Other recent transactions show typical spending behavior (online and in\u2011person) with low risk scores"
+  ],
+  "recommended_action": "no_action",
+  "reasoning": "The flagged transaction is part of a cluster of similar low\u2011value online purchases from the same region and email domain, and the velocity analysis does not indicate abnormal burst activity. With no matching past fraud pattern, the evidence leans toward legitimate behavior, supporting a no\u2011action decision."
+}

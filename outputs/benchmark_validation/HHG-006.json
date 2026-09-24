@@ -1,0 +1,107 @@
+{
+  "case_id": "HHG-006",
+  "customer_id": "C07297",
+  "transaction_id": "3476682",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "graph_evidence_count": 11,
+  "pattern_count": 1,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 0,
+    "past_cases": 0
+  },
+  "risk": {
+    "initial": 0,
+    "graph": 10,
+    "final": 18.5
+  },
+  "next_best_action": {
+    "action": "block_card",
+    "reason": "Human approval required.",
+    "approval_route": "human_analyst",
+    "approval_required": true
+  },
+  "reasoning": "Customer C07297 explicitly reported that they never made the $482.12 purchase on card C07297-K1. Additionally, velocity checks on the customer account revealed a suspicious burst of small transactions within a short time window, indicating card-testing activity prior to the reported unauthorized charge.",
+  "agent": {
+    "summary": "Customer directly reported the $482.12 transaction as unauthorized Velocity check confirms card-testing behavior with a burst of small transactions within a short time window",
+    "interpretation": "Customer C07297 explicitly reported that they never made the $482.12 purchase on card C07297-K1. Additionally, velocity checks on the customer account revealed a suspicious burst of small transactions within a short time window, indicating card-testing activity prior to the reported unauthorized charge.",
+    "decision": "Verdict: fraud (confidence 85.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C07297",
+      "relationship": "owns_card",
+      "connected_to": "C07297-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3588834",
+      "evidence": "amount=$31.03, time=2016-12-31 13:14:13, channel=in_person, region=492.0, risk_score=0.45"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3586692",
+      "evidence": "amount=$92.98, time=2016-12-30 16:38:46, channel=in_person, region=330.0, risk_score=0.06"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3585834",
+      "evidence": "amount=$57.88, time=2016-12-30 03:22:10, channel=in_person, region=253.0, risk_score=0.34"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3579655",
+      "evidence": "amount=$83.00, time=2016-12-27 19:19:17, channel=in_person, region=194.0, risk_score=0.09"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3570470",
+      "evidence": "amount=$30.88, time=2016-12-24 02:24:42, channel=in_person, region=485.0, risk_score=0.23"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3570456",
+      "evidence": "amount=$30.92, time=2016-12-24 02:18:31, channel=in_person, region=485.0, risk_score=0.24"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3570442",
+      "evidence": "amount=$31.04, time=2016-12-24 02:11:40, channel=in_person, region=485.0, risk_score=0.2"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3569953",
+      "evidence": "amount=$47.92, time=2016-12-23 22:59:23, channel=in_person, region=272.0, risk_score=0.13"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3565606",
+      "evidence": "amount=$36.90, time=2016-12-22 14:13:22, channel=in_person, region=264.0, risk_score=0.01"
+    },
+    {
+      "entity": "C07297",
+      "relationship": "made_txn",
+      "connected_to": "3565596",
+      "evidence": "amount=$25.95, time=2016-12-22 14:09:58, channel=in_person, region=492.0, risk_score=0.35"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Small-transaction burst",
+      "description": "3 small transaction(s) occurred within the configured 60-minute window.",
+      "severity": "Medium"
+    }
+  ]
+}

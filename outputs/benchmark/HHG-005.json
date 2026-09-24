@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-005",
+  "trigger_type": "risk_score",
+  "customer_id": "C02923",
+  "flagged_txn_id": "3523199",
+  "timestamp": "2026-09-23T17:30:35.352995",
+  "verdict": "fraud",
+  "confidence": 0.78,
+  "evidence": [
+    "Customer C02923 has three confirmed account takeover fraud cases in the past 4 months (patterns: mixed-channel, online & in\u2011person, similar amounts)",
+    "Current transaction (ID 3523199) is online, $100.07, same region (330.0) and same card ID used in prior fraud cases",
+    "Risk model scored the transaction 0.54 (moderate risk) despite no burst of small transactions"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The customer's recent history shows repeated account takeover fraud involving online transactions on the same card and region. The current online purchase matches the amount and pattern of those prior frauds, and the risk score is elevated. Therefore, the transaction is likely fraudulent and the card should be blocked."
+}

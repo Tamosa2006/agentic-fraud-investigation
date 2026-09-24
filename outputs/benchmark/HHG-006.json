@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-006",
+  "trigger_type": "customer_report",
+  "customer_id": "C07297",
+  "flagged_txn_id": "3476682",
+  "timestamp": "2026-09-23T17:32:28.299440",
+  "verdict": "uncertain",
+  "confidence": 0.4,
+  "evidence": [
+    "Customer has no prior fraud cases",
+    "No devices associated with the account (cannot verify device used for the flagged transaction)",
+    "Recent transaction history shows many low-value in\u2011person purchases (mostly <$300) with low risk scores",
+    "Flagged transaction amount $482.12 is higher than typical amounts but not unprecedented"
+  ],
+  "recommended_action": "escalate_to_human",
+  "reasoning": "The account shows no prior fraud patterns and lacks device information to confirm the legitimacy of the $482.12 purchase. While the amount is larger than most recent transactions, the customer's denial cannot be verified with available data, so a human review is needed."
+}

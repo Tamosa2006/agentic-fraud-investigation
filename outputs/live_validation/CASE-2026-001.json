@@ -1,0 +1,38 @@
+{
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "evidence": [
+    "Customer ID lookup failed due to vertex ID conversion error in the tool database",
+    "No transaction or customer profile evidence could be retrieved"
+  ],
+  "reasoning": "Due to a technical error when querying the database for customer CUST-1042, no transaction history, device info, or past fraud case records could be retrieved. Without supporting evidence from the tools, the investigation remains inconclusive and uncertain.",
+  "recommended_action": "escalate_to_human",
+  "action_allowed": true,
+  "requires_approval": false,
+  "approval_route": "automatic",
+  "policy_reason": "Action may be performed by the agent workflow.",
+  "graph_evidence": [],
+  "patterns": [],
+  "risk": {
+    "initial": 87.0,
+    "graph": 87.0,
+    "final": 87.0
+  },
+  "agent": {
+    "summary": "Customer ID lookup failed due to vertex ID conversion error in the tool database No transaction or customer profile evidence could be retrieved",
+    "interpretation": "Due to a technical error when querying the database for customer CUST-1042, no transaction history, device info, or past fraud case records could be retrieved. Without supporting evidence from the tools, the investigation remains inconclusive and uncertain.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "customer_profile": {
+    "cards": [],
+    "transactions": [],
+    "devices": [],
+    "past_cases": []
+  }
+}

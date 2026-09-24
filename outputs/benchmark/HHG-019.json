@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-019",
+  "trigger_type": "risk_score",
+  "customer_id": "C07987",
+  "flagged_txn_id": "3503878",
+  "timestamp": "2026-09-23T17:44:35.450698",
+  "verdict": "fraud",
+  "confidence": 0.92,
+  "evidence": [
+    "Model risk score for transaction 3503878 is 0.90 (high risk).",
+    "Velocity check shows a suspicious burst of three small online transactions (<$100) within 20 minutes, indicating possible card\u2011testing behavior.",
+    "Customer C07987 has two prior confirmed fraud cases on the same card (CC\u20112860: card\u2011not\u2011present fraud; CC\u20115026: out\u2011of\u2011region use).",
+    "Current transaction is online (card\u2011not\u2011present) and uses a device (Mac OS X 10.11 | Firefox 60.0) not previously seen in legitimate activity."
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The combination of a high model risk score, recent burst of small online transactions suggestive of testing, and the customer's history of confirmed card\u2011not\u2011present and out\u2011of\u2011region fraud on the same card strongly indicate fraudulent activity. Blocking the card prevents further potential loss."
+}

@@ -1,0 +1,131 @@
+{
+  "case_id": "HHG-017",
+  "customer_id": "C04570",
+  "transaction_id": "3450629",
+  "verdict": "legit",
+  "confidence": 0.8,
+  "graph_evidence_count": 15,
+  "pattern_count": 1,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 3,
+    "past_cases": 1
+  },
+  "risk": {
+    "initial": 57.0,
+    "graph": 60.0,
+    "final": 52.0
+  },
+  "next_best_action": {
+    "action": "no_action",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "The flagged transaction of $100.09 shares a similar profile and region to previous transactions by customer C04570 that were consistent with normal account behavior. Past case history shows a cleared alert with similar characteristics where travel/activity was confirmed. The moderate risk score of 0.57 alone does not provide sufficient evidence of fraud, pointing toward legitimate usage.",
+  "agent": {
+    "summary": "Customer C04570 has previous past cases cleared as legitimate where cardholder confirmed travel/activity. Prior transaction history shows multiple similar online transactions with low risk scores. Model risk score of 0.57 for transaction 3450629 is moderate without supporting evidence of unauthorized behavior.",
+    "interpretation": "The flagged transaction of $100.09 shares a similar profile and region to previous transactions by customer C04570 that were consistent with normal account behavior. Past case history shows a cleared alert with similar characteristics where travel/activity was confirmed. The moderate risk score of 0.57 alone does not provide sufficient evidence of fraud, pointing toward legitimate usage.",
+    "decision": "Verdict: legit (confidence 80.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C04570",
+      "relationship": "owns_card",
+      "connected_to": "C04570-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3573022",
+      "evidence": "amount=$200.02, time=2016-12-25 01:27:48, channel=online, region=299.0, risk_score=0.12"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3573010",
+      "evidence": "amount=$199.94, time=2016-12-25 01:24:46, channel=online, region=299.0, risk_score=0.16"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3495090",
+      "evidence": "amount=$249.93, time=2016-11-28 18:28:17, channel=online, region=315.0, risk_score=0.15"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3495066",
+      "evidence": "amount=$249.92, time=2016-11-28 18:19:32, channel=online, region=315.0, risk_score=0.08"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3495061",
+      "evidence": "amount=$250.03, time=2016-11-28 18:17:46, channel=online, region=315.0, risk_score=0.22"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3495037",
+      "evidence": "amount=$249.98, time=2016-11-28 18:10:35, channel=online, region=315.0, risk_score=0.07"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3450629",
+      "evidence": "amount=$100.09, time=2016-11-11 23:46:24, channel=online, region=204.0, risk_score=0.57"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3450503",
+      "evidence": "amount=$99.96, time=2016-11-11 22:58:57, channel=online, region=204.0, risk_score=0.1"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3450436",
+      "evidence": "amount=$100.09, time=2016-11-11 22:36:50, channel=online, region=204.0, risk_score=0.05"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "made_txn",
+      "connected_to": "3403833",
+      "evidence": "amount=$99.94, time=2016-10-27 21:32:25, channel=online, region=420.0, risk_score=0.85"
+    },
+    {
+      "entity": "C04570",
+      "relationship": "device_observed",
+      "connected_to": "Mac OS X 10_13_4 | chrome 65.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C04570",
+      "relationship": "device_observed",
+      "connected_to": "Windows 10 | chrome 65.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C04570",
+      "relationship": "device_observed",
+      "connected_to": "Windows 10 | ie 11.0 for desktop",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C04570",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1383",
+      "evidence": "outcome=cleared, pattern=none, exposure=$0.00"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "High-risk recent transaction",
+      "description": "1 recent transaction(s) returned by TigerGraph have a transaction risk score of at least 0.70.",
+      "severity": "Medium"
+    }
+  ]
+}

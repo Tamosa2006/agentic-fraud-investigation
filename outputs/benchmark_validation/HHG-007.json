@@ -1,0 +1,243 @@
+{
+  "case_id": "HHG-007",
+  "customer_id": "C09933",
+  "transaction_id": "3514948",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 32,
+  "pattern_count": 3,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 2,
+    "past_cases": 19
+  },
+  "risk": {
+    "initial": 87.0,
+    "graph": 100,
+    "final": 100
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "While the customer has a substantial history of confirmed fraud cases on this specific card and the current transaction has a high risk score of 0.87, the recent transaction profile also includes many legitimate-appearing transactions with low risk scores. Due to the mixed signals and insufficient definitive evidence connecting the current transaction directly to fraudulent behavior, the verdict is uncertain.",
+  "agent": {
+    "summary": "Customer C09933 has a history of multiple confirmed fraud cases on card C09933-K2 involving account takeover and out-of-region use. The flagged transaction 3514948 has a high model risk score of 0.87. Recent transaction history shows multiple normal transactions with low risk scores on the same card.",
+    "interpretation": "While the customer has a substantial history of confirmed fraud cases on this specific card and the current transaction has a high risk score of 0.87, the recent transaction profile also includes many legitimate-appearing transactions with low risk scores. Due to the mixed signals and insufficient definitive evidence connecting the current transaction directly to fraudulent behavior, the verdict is uncertain.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C09933",
+      "relationship": "owns_card",
+      "connected_to": "C09933-K2",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3590736",
+      "evidence": "amount=$47.96, time=2016-12-31 23:57:27, channel=in_person, region=264.0, risk_score=0.17"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3590655",
+      "evidence": "amount=$116.92, time=2016-12-31 23:28:44, channel=in_person, region=444.0, risk_score=0.26"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3590327",
+      "evidence": "amount=$176.02, time=2016-12-31 21:35:16, channel=in_person, region=264.0, risk_score=0.11"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3589171",
+      "evidence": "amount=$10.14, time=2016-12-31 15:18:53, channel=online, risk_score=0.12"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3589112",
+      "evidence": "amount=$47.98, time=2016-12-31 14:59:56, channel=in_person, region=264.0, risk_score=0.33"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3589105",
+      "evidence": "amount=$47.92, time=2016-12-31 14:58:24, channel=in_person, region=264.0, risk_score=0.05"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3588762",
+      "evidence": "amount=$107.91, time=2016-12-31 12:34:04, channel=in_person, region=264.0, risk_score=0.09"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3588410",
+      "evidence": "amount=$57.90, time=2016-12-31 03:30:03, channel=in_person, region=264.0, risk_score=0.07"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3588397",
+      "evidence": "amount=$48.03, time=2016-12-31 03:20:41, channel=in_person, region=264.0, risk_score=0.2"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "made_txn",
+      "connected_to": "3588360",
+      "evidence": "amount=$14.94, time=2016-12-31 02:58:29, channel=online, region=264.0, risk_score=0.15"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09933",
+      "relationship": "device_observed",
+      "connected_to": "iOS 11.3.0 | mobile safari 11.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-5521",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$730.52"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-5092",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$215.07"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4787",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$804.14"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4597",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$68.91"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4455",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$234.84"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4277",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$209.86"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-4196",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$546.94"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3821",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$1,137.05"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3439",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$454.82"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3136",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$73.99"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2986",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$210.02"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2834",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$387.92"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2565",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$513.80"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1682",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$206.01"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1524",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$3,532.83"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1228",
+      "evidence": "outcome=confirmed_fraud, pattern=account_takeover, exposure=$1,112.65"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0765",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$1,664.54"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0657",
+      "evidence": "outcome=cleared, pattern=none, exposure=$0.00"
+    },
+    {
+      "entity": "C09933",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0104",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$92.02"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 18 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated account_takeover",
+      "description": "TigerGraph returned 8 previous confirmed fraud case(s) with the pattern 'account_takeover'.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated out_of_region_use",
+      "description": "TigerGraph returned 10 previous confirmed fraud case(s) with the pattern 'out_of_region_use'.",
+      "severity": "High"
+    }
+  ]
+}

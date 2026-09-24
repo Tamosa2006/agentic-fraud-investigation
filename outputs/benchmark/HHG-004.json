@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-004",
+  "trigger_type": "customer_report",
+  "customer_id": "C08106",
+  "flagged_txn_id": "3583227",
+  "timestamp": "2026-09-23T17:29:45.176457",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "evidence": [
+    "Customer reported transaction 3583227 as unrecognized.",
+    "Transaction 3583227 has a moderate risk score (0.34) and is online.",
+    "Customer C08106 has three prior confirmed card\u2011not\u2011present fraud cases on the same card (C08106\u2011K1).",
+    "All prior fraud cases involved unrecognized online purchases with similar merchant/email patterns."
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The customer's direct report combined with a history of multiple confirmed card\u2011not\u2011present frauds on the same card strongly indicates this transaction is fraudulent. The moderate risk score and online channel align with the pattern of past fraud, warranting a high confidence block of the card."
+}

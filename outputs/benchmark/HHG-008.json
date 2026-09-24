@@ -1,0 +1,16 @@
+{
+  "case_id": "HHG-008",
+  "trigger_type": "customer_report",
+  "customer_id": "C13171",
+  "flagged_txn_id": "3558054",
+  "timestamp": "2026-09-23T17:34:28.213139",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "evidence": [
+    "Customer C13171 has three prior confirmed fraud cases (CC-5010, CC-4485, CC-4163) all with pattern 'card_not_present_new_device'",
+    "Recent transaction history shows multiple similar $55.xx online purchases with moderate risk scores, indicating a pattern of small card\u2011not\u2011present fraud",
+    "Customer directly reported the $55.68 transaction as unauthorized"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The customer's history of repeated card\u2011not\u2011present fraud using new devices, combined with a similar small online purchase and a direct customer complaint, strongly suggests this transaction is fraudulent. Blocking the card will prevent further loss."
+}

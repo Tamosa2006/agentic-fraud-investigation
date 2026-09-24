@@ -1,0 +1,34 @@
+[
+  {
+    "case_id": "CASE-2026-001",
+    "customer_id": "CUST-1042",
+    "transaction_id": "TXN-783421",
+    "card_id": "CARD-5521",
+    "trigger_type": "Suspicious Transaction",
+    "trigger_text": "A high-value transaction was detected from CUST-1042. The transaction is linked to a card that has been associated with multiple recent transactions showing unusual activity.",
+    "risk_score": 87.0,
+    "source": "live"
+  },
+  {
+    "case_id": "LIVE-001",
+    "customer_id": "C12382",
+    "transaction_id": "3514030",
+    "card_id": "C12382-K1",
+    "trigger_type": "risk_score",
+    "trigger_text": "Transaction flagged due to elevated fraud risk score and previous fraud history.",
+    "risk_score": null,
+    "source": "live",
+    "status": "Ready"
+  },
+  {
+    "case_id": "DEMO-001",
+    "customer_id": "C12382",
+    "transaction_id": "3514030",
+    "card_id": "C12382-K1",
+    "trigger_type": "suspicious_transaction",
+    "trigger_text": "A debit card transaction was flagged elevated risk. Investigate the transaction, customer, history and related activity for potential fraud.",
+    "risk_score": null,
+    "source": "live",
+    "status": "Ready"
+  }
+]

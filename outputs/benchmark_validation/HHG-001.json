@@ -1,0 +1,141 @@
+{
+  "case_id": "HHG-001",
+  "customer_id": "C12382",
+  "transaction_id": "3514030",
+  "verdict": "uncertain",
+  "confidence": 0.5,
+  "graph_evidence_count": 15,
+  "pattern_count": 3,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 0,
+    "past_cases": 4
+  },
+  "risk": {
+    "initial": 61.0,
+    "graph": 87.0,
+    "final": 87.0
+  },
+  "next_best_action": {
+    "action": "escalate_to_human",
+    "reason": "Action may be performed by the agent workflow.",
+    "approval_route": "automatic",
+    "approval_required": false
+  },
+  "reasoning": "While the customer has a significant history of confirmed fraud cases on this specific card, the flagged transaction's model risk score is only moderately elevated at 0.61, and recent transaction patterns do not show definitive signs of ongoing fraudulent behavior. Without further differentiating evidence regarding the legitimacy of this specific transaction, the case remains uncertain.",
+  "agent": {
+    "summary": "Model risk score is 0.61 for transaction 3514030 ($77.07, region 444.0). Customer C12382 has four past confirmed fraud cases on card C12382-K1 involving out-of-region use and card-not-present/new devices. Recent transactions show standard in-person activity across various regions with low to moderate risk scores.",
+    "interpretation": "While the customer has a significant history of confirmed fraud cases on this specific card, the flagged transaction's model risk score is only moderately elevated at 0.61, and recent transaction patterns do not show definitive signs of ongoing fraudulent behavior. Without further differentiating evidence regarding the legitimacy of this specific transaction, the case remains uncertain.",
+    "decision": "Verdict: uncertain (confidence 50.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C12382",
+      "relationship": "owns_card",
+      "connected_to": "C12382-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3589921",
+      "evidence": "amount=$76.97, time=2016-12-31 19:14:37, channel=in_person, region=444.0, risk_score=0.02"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3587270",
+      "evidence": "amount=$15.02, time=2016-12-30 19:52:47, channel=in_person, region=433.0, risk_score=0.05"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3586772",
+      "evidence": "amount=$36.00, time=2016-12-30 17:04:22, channel=in_person, region=428.0, risk_score=0.14"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3585417",
+      "evidence": "amount=$424.96, time=2016-12-30 00:19:50, channel=in_person, region=472.0, risk_score=0.78"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3585414",
+      "evidence": "amount=$424.93, time=2016-12-30 00:18:35, channel=in_person, region=472.0, risk_score=0.07"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3582686",
+      "evidence": "amount=$269.96, time=2016-12-28 22:26:54, channel=in_person, region=204.0, risk_score=0.18"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3582069",
+      "evidence": "amount=$55.08, time=2016-12-28 18:46:50, channel=in_person, region=272.0, risk_score=0.22"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3581814",
+      "evidence": "amount=$107.99, time=2016-12-28 17:15:54, channel=in_person, region=110.0, risk_score=0.05"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3579237",
+      "evidence": "amount=$14.99, time=2016-12-27 16:48:17, channel=in_person, region=433.0, risk_score=0.08"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "made_txn",
+      "connected_to": "3577784",
+      "evidence": "amount=$114.91, time=2016-12-26 22:52:58, channel=in_person, region=204.0, risk_score=0.1"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3587",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$49.09"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2964",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$171.08"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1673",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_new_device, exposure=$199.98"
+    },
+    {
+      "entity": "C12382",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1066",
+      "evidence": "outcome=confirmed_fraud, pattern=out_of_region_use, exposure=$170.98"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 4 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated out_of_region_use",
+      "description": "TigerGraph returned 3 previous confirmed fraud case(s) with the pattern 'out_of_region_use'.",
+      "severity": "High"
+    },
+    {
+      "name": "High-risk recent transaction",
+      "description": "1 recent transaction(s) returned by TigerGraph have a transaction risk score of at least 0.70.",
+      "severity": "Medium"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-009",
+  "trigger_type": "customer_report",
+  "customer_id": "C08299",
+  "flagged_txn_id": "3581141",
+  "timestamp": "2026-09-23T17:35:11.527131",
+  "verdict": "legit",
+  "confidence": 0.75,
+  "evidence": [
+    "No past fraud cases for customer C08299",
+    "Transaction 3581141 is a single $30.02 online purchase with moderate risk score (0.28) and no accompanying burst of small transactions",
+    "Velocity check shows no suspicious burst (max 3 small txns within 60\u202fmin, below threshold of 5)",
+    "Customer's recent activity consists of similar online purchases in nearby regions, indicating normal usage pattern"
+  ],
+  "recommended_action": "no_action",
+  "reasoning": "The flagged purchase fits the customer's typical online buying behavior and does not trigger any velocity or risk alerts. With no prior fraud history and no evidence of a card\u2011testing pattern, the transaction is most likely legitimate."
+}

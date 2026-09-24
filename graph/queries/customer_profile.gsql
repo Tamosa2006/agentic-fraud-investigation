@@ -1,0 +1,30 @@
+USE GRAPH FraudGraph
+
+CREATE QUERY customer_profile(VERTEX<Customer> cust, INT recent_n = 20) FOR GRAPH FraudGraph {
+ 
+  Cards = SELECT c
+          FROM Customer:s -(owns_card:e)- Card:c
+          WHERE s == cust;
+
+
+  AllTxns = SELECT t
+            FROM Customer:s -(made_txn:e)- Transaction:t
+            WHERE s == cust
+            ORDER BY t.ts DESC
+            LIMIT recent_n;
+
+
+  Devices = SELECT d
+            FROM AllTxns:t -(used_device:e)- Device:d;
+
+ 
+  PastCases = SELECT fc
+              FROM Customer:s -(customer_in_case:e)- FraudCase:fc
+              WHERE s == cust
+              ORDER BY fc.opened_at DESC;
+
+  PRINT Cards;
+  PRINT AllTxns;
+  PRINT Devices;
+  PRINT PastCases;
+}

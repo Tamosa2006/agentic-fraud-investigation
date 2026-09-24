@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-014",
+  "trigger_type": "analyst_request",
+  "customer_id": "C13487",
+  "flagged_txn_id": "3478561",
+  "timestamp": "2026-09-23T17:39:13.414429",
+  "verdict": "legit",
+  "confidence": 0.85,
+  "evidence": [
+    "Transaction 3478561 has a low risk score (0.05) and typical online purchase amount",
+    "Customer's device profile (Android 7.0 | Chrome 62.0) is the only device seen for this customer and not linked to past fraud cases",
+    "Velocity check shows no burst of small transactions (max burst 1, not suspicious)",
+    "Customer has no prior fraud history"
+  ],
+  "recommended_action": "no_action",
+  "reasoning": "The flagged transaction shows a low risk score and normal behavior, the device used is unique to this customer without any prior fraud association, and there is no evidence of rapid small\u2011transaction bursts. With no past fraud patterns matching this case, the activity appears legitimate."
+}

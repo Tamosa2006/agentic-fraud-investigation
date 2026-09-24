@@ -1,0 +1,166 @@
+{
+  "case_id": "HHG-004",
+  "customer_id": "C08106",
+  "transaction_id": "3583227",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "graph_evidence_count": 20,
+  "pattern_count": 2,
+  "customer_profile": {
+    "cards": 1,
+    "transactions": 10,
+    "devices": 5,
+    "past_cases": 4
+  },
+  "risk": {
+    "initial": 0,
+    "graph": 20,
+    "final": 28.5
+  },
+  "next_best_action": {
+    "action": "block_card",
+    "reason": "Human approval required.",
+    "approval_route": "human_analyst",
+    "approval_required": true
+  },
+  "reasoning": "The customer explicitly stated they never made the $128.33 purchase (transaction 3583227) on card C08106-K1. Furthermore, historical profile records show multiple past confirmed fraud cases involving online card-not-present activity on this exact card. Therefore, the current customer report aligns with established fraud patterns on the account.",
+  "agent": {
+    "summary": "Customer directly reported transaction 3583227 ($128.33) as unauthorized. Card C08106-K1 has a history of three confirmed card-not-present fraud cases (CC-1736, CC-2121, CC-3778).",
+    "interpretation": "The customer explicitly stated they never made the $128.33 purchase (transaction 3583227) on card C08106-K1. Furthermore, historical profile records show multiple past confirmed fraud cases involving online card-not-present activity on this exact card. Therefore, the current customer report aligns with established fraud patterns on the account.",
+    "decision": "Verdict: fraud (confidence 85.0%)."
+  },
+  "graph_evidence": [
+    {
+      "entity": "C08106",
+      "relationship": "owns_card",
+      "connected_to": "C08106-K1",
+      "evidence": "Card returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3587858",
+      "evidence": "amount=$18.09, time=2016-12-30 23:24:57, channel=online, risk_score=0.07"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3585726",
+      "evidence": "amount=$22.76, time=2016-12-30 02:24:07, channel=online, risk_score=0.18"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3585446",
+      "evidence": "amount=$83.87, time=2016-12-30 00:29:05, channel=online, risk_score=0.16"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3584017",
+      "evidence": "amount=$6.48, time=2016-12-29 15:59:56, channel=online, risk_score=0.08"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3583503",
+      "evidence": "amount=$15.99, time=2016-12-29 09:29:40, channel=online, risk_score=0.13"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3583499",
+      "evidence": "amount=$16.05, time=2016-12-29 09:08:08, channel=online, risk_score=0.18"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3583227",
+      "evidence": "amount=$128.33, time=2016-12-29 01:53:54, channel=online, risk_score=0.34"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3580804",
+      "evidence": "amount=$92.86, time=2016-12-28 02:21:09, channel=online, risk_score=0.46"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3570412",
+      "evidence": "amount=$50.67, time=2016-12-24 01:56:15, channel=online, risk_score=0.36"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "made_txn",
+      "connected_to": "3569296",
+      "evidence": "amount=$32.40, time=2016-12-23 19:33:59, channel=online, risk_score=0.14"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "device_observed",
+      "connected_to": "firefox 47.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "device_observed",
+      "connected_to": "chrome 66.0 for android",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "device_observed",
+      "connected_to": "samsung browser 4.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "device_observed",
+      "connected_to": "mobile safari 11.0",
+      "evidence": "Device returned by the TigerGraph customer_profile query."
+    },
+    {
+      "entity": "C08106",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-3778",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$58.42"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-2121",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$102.68"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-1736",
+      "evidence": "outcome=confirmed_fraud, pattern=card_not_present_fraud, exposure=$9.90"
+    },
+    {
+      "entity": "C08106",
+      "relationship": "customer_in_case",
+      "connected_to": "CC-0696",
+      "evidence": "outcome=cleared, pattern=none, exposure=$0.00"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Previous confirmed fraud history",
+      "description": "TigerGraph returned 3 previous fraud case(s) for this customer.",
+      "severity": "High"
+    },
+    {
+      "name": "Repeated card_not_present_fraud",
+      "description": "TigerGraph returned 3 previous confirmed fraud case(s) with the pattern 'card_not_present_fraud'.",
+      "severity": "High"
+    }
+  ]
+}

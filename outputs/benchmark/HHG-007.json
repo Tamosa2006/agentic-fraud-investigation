@@ -1,0 +1,17 @@
+{
+  "case_id": "HHG-007",
+  "trigger_type": "risk_score",
+  "customer_id": "C09933",
+  "flagged_txn_id": "3514948",
+  "timestamp": "2026-09-23T17:34:00.664327",
+  "verdict": "fraud",
+  "confidence": 0.85,
+  "evidence": [
+    "Model risk score for transaction 3514948 is 0.87 (high)",
+    "Customer C09933 has three prior confirmed fraud cases on the same card (CC-5521, CC-5092, CC-4787) involving account takeover and out-of-region use",
+    "Past fraud patterns used the same devices (iOS mobile Safari, Android Chrome) that appear in the customer's device list",
+    "Recent transaction history shows mixed online and in\u2011person activity, a hallmark of the earlier account\u2011takeover cases"
+  ],
+  "recommended_action": "block_card",
+  "reasoning": "The high model risk score combined with a history of repeated account\u2011takeover fraud on the same card and the use of the same device types strongly suggests the current transaction is fraudulent. Blocking the card prevents further loss while the case is reviewed."
+}
