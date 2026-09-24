@@ -5,4 +5,4 @@ node_modules/
 .next/
 __pycache__/
 *.pyc
-"@ | Set-Content .gitignore
+"@ | Set-Content .gitignoredata/transactions.csv
